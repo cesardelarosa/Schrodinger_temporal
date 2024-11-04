@@ -1,39 +1,41 @@
 \documentclass[twocolumn, aps, prd, 10pt, superscriptaddress, nofootinbib]{revtex4-2}
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath, amssymb, graphicx, float, hyperref, booktabs, listings, eulervm, geometry, pgffor, xcolor, setspace, xstring}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\let\ls\lstinline
+\usepackage{amsmath, amssymb, graphicx, float, hyperref, booktabs, eulervm, geometry, xcolor}
+\usepackage[numbered,framed]{matlab-prettifier}
 
-\geometry{
-  top=1.7cm,
-  bottom=1.7cm,
-  left=1.7cm,
-  right=1.7cm
-}
-
-\setstretch{1.00}
+\geometry{margin=1.7cm}
 
 \lstset{
-  language=Matlab,
-  basicstyle=\ttfamily\small,
-  keywordstyle=\color{blue}\bfseries,
-  commentstyle=\color{green!50!black},
-  stringstyle=\color{red},
-  numbers=left,
-  numberstyle=\tiny,
-  stepnumber=1,
-  numbersep=5pt,
-  frame=single,
-  breaklines=true,
-  showstringspaces=false,
-  captionpos=b,
-  backgroundcolor=\color{gray!10}
+  style              = Matlab-editor,
+  basicstyle         = \mlttfamily\small,
+  keywordstyle       = \color{blue},
+  commentstyle       = \color{green!50!black},
+  stringstyle        = \color{red},
+  numberstyle        = \tiny,
+  frame              = single,
+  showstringspaces   = false,
+  breaklines         = true,
+  backgroundcolor    = \color{gray!10},
+  literate= {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+           {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+           {ñ}{{\~n}}1 {Ñ}{{\~N}}1
 }
+
+
+\makeatletter
+\renewcommand{\date}[1]{\gdef\@date{\textnormal{Fecha: #1}}}
+\date{\today}
+\makeatother
 
 \begin{document}
 
 \title{Resolución numérica de la ecuación de Schrödinger dependiente del tiempo}
 \author{César de la Rosa Sobrino}
-\email{cdelarosa29@alumno.uned.es}
+%\affiliation{Univerdad Nacional de Educación a Distancia (UNED)\\Asignatura: Física Cuántica I}
+%\email{cdelarosa29@alumno.uned.es}
 \date{\today}
 
 \begin{abstract}
@@ -47,31 +49,31 @@ En este trabajo, se aborda la resolución numérica de la ecuación de Schrödin
 
 \section{Ecuaciones en derivadas parciales}
 \input{ecuaciones_edp.tex}
-b
+a
 \section{Propagación de una onda sinusoidal}
 \input{onda_sinusoidal.tex}
-c
+b
 \section{Ecuación de Schrödinger dependiente del tiempo}
 \input{schrodinger_tiempo.tex}
-d
+c
 \section{Discretización de la ecuación de Schrödinger}
 \input{diferencias_finitas.tex}
-e
+d
 \section{Evolución temporal de una partícula libre}
 \input{particula_libre.tex}
-f
+e
 \section{Evolución temporal de una partícula viajera}
 \input{particula_viajera.tex}
-g
+f
 \section{Funciones del oscilador armónico}
 \input{oscilador_armonico.tex}
-h
+g
 \section{Sistema de elección propia}
 \input{sistema_elegido.tex}
-i
+h
 \section{Conclusiones}
 \input{conclusiones.tex}
-j
+i
 \bibliographystyle{apsrev4-2}
 \bibliography{referencias}
 
@@ -80,13 +82,10 @@ j
 \appendix
 \section{Código fuente}
 
-\foreach \filename in {../codigo/a.m} {
-  \IfFileExists{\filename}{
-	  \StrBehind{\filename}{codigo/}[\basename]
-	  \lstinputlisting[caption={Código: \basename\ }, label={lst:\basename}]{\filename}
-  }{
-    \typeout{Warning: File \filename\ not found.}
-  }
-}
+\lstinputlisting[caption={main.m}, label={lst:main}, inputencoding=utf8]{../codigo/main.m}
+\lstinputlisting[caption={init\_gaussian.m}, label={lst:init_gaussian}]{../codigo/init_gaussian.m}
+\lstinputlisting[caption={free\_evol.m}, label={lst:free_evol}]{../codigo/free_evol.m}
+\lstinputlisting[caption={oscilator\_evol.m}, label={lst:oscilator_evol}]{../codigo/oscilator_evol.m}
+\lstinputlisting[caption={travel\_evol.m}, label={lst:travel_evol}]{../codigo/travel_evol.m}
 
 \end{document}
