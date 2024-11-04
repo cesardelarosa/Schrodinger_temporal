@@ -1,0 +1,67 @@
+\documentclass[a4paper, 12pt, twocolumn]{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, graphicx, float, hyperref}
+\usepackage{caption, subcaption}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Resolución Numérica de la Ecuación de Schrödinger Dependiente del Tiempo}
+
+\author{
+	César de la Rosa Sobrino \\
+	Universidad Nacional de Educación a Distancia (UNED) \\
+	Física Cuántica I
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Hola
+\end{abstract}
+
+\twocolumn
+
+\section{Introducción}
+\input{intro.tex}
+HOLA QUE TAL quiero entender un poquito como va esto
+\section{Ecuaciones en Derivadas Parciales}
+\input{ecuaciones_edp.tex}
+
+\section{Propagación de una Onda Sinusoidal}
+\input{onda_sinusoidal.tex}
+
+\section{Ecuación de Schrödinger Dependiente del Tiempo}
+\input{schrodinger_tiempo.tex}
+
+\section{Discretización de la Ecuación de Schrödinger}
+\input{diferencias_finitas.tex}
+
+\section{Evolución Temporal de una Partícula Libre}
+\input{particula_libre.tex}
+
+\section{Evolución Temporal de una Partícula Viajera}
+\input{particula_viajera.tex}
+
+\section{Funciones del Oscilador Armónico}
+\input{oscilador_armonico.tex}
+
+\section{Sistema de Elección Propia}
+\input{sistema_elegido.tex}
+
+\section{Conclusiones}
+\input{conclusiones.tex}
+
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\appendix
+\section{Código Fuente}
+\input{codigo_fuente.tex}
+
+\end{document}
