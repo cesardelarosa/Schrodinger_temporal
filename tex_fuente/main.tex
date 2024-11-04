@@ -7,6 +7,7 @@
 \usepackage{pgffor}
 \usepackage{xcolor}
 \usepackage{setspace}
+\usepackage{xstring}
 
 \geometry{
   top=1.7cm,
@@ -80,12 +81,15 @@ j
 \bibliographystyle{apsrev4-2}
 \bibliography{referencias}
 
+\newpage
+\onecolumngrid
 \appendix
 \section{Código fuente}
 
-\foreach \filename in {"../codigo/a.m"} {
+\foreach \filename in {../codigo/a.m} {
   \IfFileExists{\filename}{
-	  \lstinputlisting[caption={Código: \filename\ }, label={lst:\filename}]{\filename}
+	  \StrBehind{\filename}{codigo/}[\basename]
+	  \lstinputlisting[caption={Código: \basename\ }, label={lst:\basename}]{\filename}
   }{
     \typeout{Warning: File \filename\ not found.}
   }
