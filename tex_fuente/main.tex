@@ -1,67 +1,66 @@
-\documentclass[a4paper, 12pt, twocolumn]{article}
-
-\usepackage[spanish]{babel}
-\usepackage{amsmath, amssymb, graphicx, float, hyperref}
-\usepackage{caption, subcaption}
+\documentclass[twocolumn, aps, prd, 10pt, superscriptaddress, nofootinbib]{revtex4-2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, graphicx, float, hyperref, booktabs}
+\usepackage{eulervm}
 \usepackage{geometry}
+\usepackage{setspace}
 
-\geometry{margin=1in}
-
-\title{Resolución Numérica de la Ecuación de Schrödinger Dependiente del Tiempo}
-
-\author{
-	César de la Rosa Sobrino \\
-	Universidad Nacional de Educación a Distancia (UNED) \\
-	Física Cuántica I
+\geometry{
+  top=1.5cm,
+  bottom=2.0cm,
+  left=1.5cm,
+  right=1.5cm
 }
 
+\setstretch{1.05}
+\begin{document}
+
+\title{Resolución numérica de la ecuación de Schrödinger dependiente del tiempo}
+\author{César de la Rosa Sobrino}
+\email{cdelarosa29@alumno.uned.es}
 \date{\today}
 
-\begin{document}
+\begin{abstract}
+En este trabajo, se aborda la resolución numérica de la ecuación de Schrödinger dependiente del tiempo, aplicando diferentes métodos de discretización para observar la evolución temporal de partículas en diversos potenciales.
+\end{abstract}
 
 \maketitle
 
-\begin{abstract}
-	Hola
-\end{abstract}
-
-\twocolumn
-
 \section{Introducción}
 \input{intro.tex}
-HOLA QUE TAL quiero entender un poquito como va esto
-\section{Ecuaciones en Derivadas Parciales}
+
+\section{Ecuaciones en derivadas parciales}
 \input{ecuaciones_edp.tex}
-
-\section{Propagación de una Onda Sinusoidal}
+b
+\section{Propagación de una onda sinusoidal}
 \input{onda_sinusoidal.tex}
-
-\section{Ecuación de Schrödinger Dependiente del Tiempo}
+c
+\section{Ecuación de Schrödinger dependiente del tiempo}
 \input{schrodinger_tiempo.tex}
-
-\section{Discretización de la Ecuación de Schrödinger}
+d
+\section{Discretización de la ecuación de Schrödinger}
 \input{diferencias_finitas.tex}
-
-\section{Evolución Temporal de una Partícula Libre}
+e
+\section{Evolución temporal de una partícula libre}
 \input{particula_libre.tex}
-
-\section{Evolución Temporal de una Partícula Viajera}
+f
+\section{Evolución temporal de una partícula viajera}
 \input{particula_viajera.tex}
-
-\section{Funciones del Oscilador Armónico}
+g
+\section{Funciones del oscilador armónico}
 \input{oscilador_armonico.tex}
-
-\section{Sistema de Elección Propia}
+h
+\section{Sistema de elección propia}
 \input{sistema_elegido.tex}
-
+i
 \section{Conclusiones}
 \input{conclusiones.tex}
-
-\bibliographystyle{plain}
+j
+\bibliographystyle{apsrev4-2}
 \bibliography{referencias}
 
 \appendix
-\section{Código Fuente}
-\input{codigo_fuente.tex}
+\section{Código fuente}
 
 \end{document}
