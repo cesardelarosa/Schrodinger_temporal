@@ -1,6 +1,6 @@
 % oscilator_evol.m
 
-function [psi_evol] = evolucion_oscilador(psi, x, dx, dt, Nt)
+function [psi_evol] = oscilator_evol(psi, x, dx, dt, Nt)
     V = 0.5 * x.^2;
     for j = 1:Nt
         psi(2:end-1) = psi(2:end-1) + ...

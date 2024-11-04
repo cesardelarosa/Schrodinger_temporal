@@ -1,6 +1,6 @@
 % travel_evol.m
 
-function [psi_evol] = evolucion_viajera(psi, x, dx, dt, Nt, V0)
+function [psi_evol] = travel_evol(psi, x, dx, dt, Nt, V0)
     xb = 0;
     V = V0 * (x >= xb);
     for j = 1:Nt
