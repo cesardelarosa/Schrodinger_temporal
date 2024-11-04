@@ -1,9 +1,11 @@
 \documentclass[twocolumn, aps, prd, 10pt, superscriptaddress, nofootinbib]{revtex4-2}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath, amssymb, graphicx, float, hyperref, booktabs}
+\usepackage{amsmath, amssymb, graphicx, float, hyperref, booktabs, listings}
 \usepackage{eulervm}
 \usepackage{geometry}
+\usepackage{pgffor}
+\usepackage{xcolor}
 \usepackage{setspace}
 
 \geometry{
@@ -14,6 +16,24 @@
 }
 
 \setstretch{1.05}
+
+\lstset{
+  language=Matlab,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=5pt,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  captionpos=b,
+  backgroundcolor=\color{gray!10}
+}
+
 \begin{document}
 
 \title{Resolución numérica de la ecuación de Schrödinger dependiente del tiempo}
@@ -62,5 +82,13 @@ j
 
 \appendix
 \section{Código fuente}
+
+\foreach \filename in {"../codigo/a.m"} {
+  \IfFileExists{\filename}{
+	  \lstinputlisting[caption={Código: \filename\ }, label={lst:\filename}]{\filename}
+  }{
+    \typeout{Warning: File \filename\ not found.}
+  }
+}
 
 \end{document}
