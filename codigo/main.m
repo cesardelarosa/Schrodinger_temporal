@@ -1,5 +1,8 @@
 % main.m
+
 clear; clc;
+
+graphics_toolkit('gnuplot');
 
 xmin = -10;
 xmax = 10;
