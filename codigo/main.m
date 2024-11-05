@@ -2,6 +2,7 @@
 
 clear; clc;
 
+addpath('codigo');
 graphics_toolkit('gnuplot');
 
 xmin = -10;
